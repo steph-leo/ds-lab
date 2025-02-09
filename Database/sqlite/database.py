@@ -21,8 +21,13 @@ c = conn.cursor()
 # c.executemany("INSERT INTO microfinances VALUES (?,?,?)", many_microfinances)
 
 #query the database
-c.execute('SELECT * FROM microfinances')
-print(c.fetchall())
+c.execute('SELECT  * FROM microfinances')
+items = c.fetchall()
+
+print('NAME' + '\t\t' + 'EMAIL')
+print('-------' + '\t\t' + '-------')
+for item in items:
+    print(item[0]  + ' ' + item[1] + ' \t' + item[2])
 #Print a messages to the terminal
 # print ('Command excuted successfully...')
 #commit my command
